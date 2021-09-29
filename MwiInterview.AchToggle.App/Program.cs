@@ -9,7 +9,7 @@ namespace MwiInterview.AchToggle.App
     /// Simple ACH record split toggler.  The first console argument is treated as the filepath
     /// </summary>
     /// <remarks>
-    /// Destructively writes the toggled file on top of the file's current location.
+    /// Destructively writes the toggled file on top of the file's current location.  Does not correct jagged files, although that could be a trivial addition.
     /// </remarks>
     class Program
     {
