@@ -92,7 +92,6 @@ namespace MwiInterview.AchToggle.App
                             {
                                 await WriteSplitToStreamAsync(stream, lines);
                             }
-                            stream.Flush();
                         }
                     }
                     else
@@ -126,6 +125,7 @@ namespace MwiInterview.AchToggle.App
                 {
                     await writer.WriteLineAsync(record);
                 }
+                await writer.FlushAsync();
             }
         }
 
@@ -144,6 +144,7 @@ namespace MwiInterview.AchToggle.App
                 {
                     await writer.WriteAsync(record);
                 }
+                await writer.FlushAsync();
             }
         }
     }
