@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 namespace MwiInterview.AchToggle.App
 {
     /// <summary>
-    /// Simple ACH record split toggler.  The first console argument is treated as the filepath
+    /// Simple ACH record split toggler.  The first console argument is treated as the target filepath.
     /// </summary>
     /// <remarks>
-    /// Destructively writes the toggled file on top of the file's current location.  Does not correct jagged files, although that could be a trivial addition.
+    /// <para>
+    /// Destructively writes the toggled file on top of the file's current location.  Does not correct jagged files,
+    /// although that could be a trivial addition.  Does handle converting jagged files - the resulting output "looks" Ok
+    /// on a single line but is nonsensical and wrong when transformed back to having line breaks.
+    /// </para>
+    /// <para>
+    /// Better default behavior might be to refuse to transform files that are jagged (excluding the last line) with user feedback,
+    /// unless some sort of force parameter is passed.  An option to save the processed file in another location would also be a useful
+    /// enhancement so that the original can be preserved.
+    /// </para>
+    /// <para>
+    /// There are no unit tests, although File I/O testing is possible with System.IO.Abstractions.
+    /// </para>
     /// </remarks>
     class Program
     {
