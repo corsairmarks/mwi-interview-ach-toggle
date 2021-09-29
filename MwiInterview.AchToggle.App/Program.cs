@@ -58,6 +58,7 @@ namespace MwiInterview.AchToggle.App
                                     // already split (technically this could also catch 1-record files with a trailing newline)
                                     isMultilineInput = true;
                                     reader.BaseStream.Seek(0, SeekOrigin.Begin);
+                                    reader.DiscardBufferedData();
                                     while (!reader.EndOfStream)
                                     {
                                         lines.Add(await reader.ReadLineAsync());
