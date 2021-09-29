@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MwiInterview.AchToggle.App": {
+      "commandName": "Project",
+      "commandLineArgs": "\"../../../../Test Data/add_line_breaks.ach\""
+    }
+  }
+}
